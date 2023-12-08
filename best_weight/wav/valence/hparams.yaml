@@ -1,0 +1,31 @@
+task:
+  labels:
+  - HV
+  - LV
+  cls_type: V
+  feature_path: ../dataset/resample_wav
+  n_class: 2
+wav:
+  feature_path: ../dataset/resample22050
+  input_length: 3
+  sr: 22050
+hparams:
+  dataset: EMOPIA
+  task: valence
+  wav: sr22k
+  n_channels: 128
+  n_fft: 1024
+  n_mels: 128
+  f_min: 0
+  f_max: 11025
+  batch_size: 16
+  num_workers: 4
+  lr: 0.001
+  weight_decay: 0.0001
+  T_0: 32
+  max_epochs: 100
+  gpus: 1
+  distributed_backend: dp
+  deterministic: true
+  benchmark: false
+  reproduce: false
